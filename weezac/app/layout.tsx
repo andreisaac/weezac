@@ -15,8 +15,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" data-theme="dark" className="scroll-smooth overflow-y-scroll">
+      <body className={inter.className}>
+        <div className="flex">
+          <section className="flex w-1/12 z-0"/>
+          <section className="flex w-10/12 canvas z-10 bg-darkerBlue">
+            <div className="circles z-0"/>
+            <div className="circles z-0"/>
+            <div className="circles z-0"/>
+            <div className="z-10 w-full">
+              {children}
+            </div>
+          </section>
+          <section className="flex w-1/12 z-0"/>
+        </div>
+      </body>
     </html>
   );
 }

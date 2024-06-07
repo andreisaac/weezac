@@ -1,113 +1,159 @@
+import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import Faq from "@components/faq"
+import NavBar from "@components/navbar"
+import website from "./images/website.svg"
+import webdesign from "./images/webdesign.svg"
+import seo from "./images/seo.svg"
+import webapp from "./images/webapp.svg"
+import CMS from "./images/CMS.svg"
+import ecomm from "./images/ecomm.svg"
+import int from "./images/int.svg"
 
-export default function Home() {
+type SectionProps = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+};
+
+type StepProps = {
+  title: string;
+  description: string;
+};
+
+type PerformanceMetricProps = {
+  value: number;
+  label: string;
+};
+
+const Section: React.FC<SectionProps> = ({ title, description, imageUrl, imageAlt }) => (
+  <section className="grid grid-flow-row auto-rows-max place-items-center">
+    <div className="text-center mb-4 max-md:mt-3.5 max-md:max-w-full">
+        <Image loading="lazy" src={imageUrl} alt={imageAlt} width={130} height={130} className="aspect-square max-md:max-w-full drop-shadow-lg" />
+    </div>
+    <h3 className="text-center font-bold text-neutral-300 text-xl text-shadow-xl">
+      {title}
+    </h3>
+    <div className="text-center text-shadow-m mt-2 text-l text-white max-md:max-w-full">{description}</div>
+  </section>
+);
+
+const Step: React.FC<StepProps> = ({ title, description }) => (
+  <li className="step step-primary text-center text-slate-300" data-content="">
+    <h3 className="text-l font-bold text-xl my-4">{title}</h3>
+    <p>{description}</p>
+  </li>
+);
+
+const PerformanceMetric: React.FC<PerformanceMetricProps> = ({ value, label }) => (
+  <div className="flex flex-col w-3/12 max-md:ml-0 max-md:w-full">
+    <div className="radial-progress mx-auto text-green-500 text-xl" style={{"--value":value}} role="progressbar">{value}</div>
+    <div className="mt-3 text-center text-2xl text-slate-300 font-medium">{label}</div>
+  </div>
+);
+
+
+const MyComponent = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="flex flex-col items-center pb-20 snap-mandatory">
+      <NavBar/>
+      <main className="snap-start snap-always grid grid-cols-3 gap-4 w-full max-w-[1440px] max-md:mt-10 max-md:max-w-full mt-24">
+        <div className="col-span-2">
+          <h1 className="text-5xl font-black text-shadow-xl text-teal-500 leading-[64px] py-8 px-28 mt-16">
+            We build your Website!
+          </h1>
+          <p className="text-2xl px-28 tracking-wider text-white max-md:max-w-full">
+            From responsive design to seamless functionality, we ensure your website stands out in today's competitive digital landscape.Partner with us to unlock the full potential of your online platform and drive meaningful results for your business.
+          </p>
         </div>
-      </div>
+        <div className="col-auto">
+          <Image src={website} loading="lazy" className="w-full pt-8 pr-24" alt="We build your website"/>
+        </div>
+      </main>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <main className="grid grid-cols-4 gap-14 bg-dark-gradient mx-14 p-8 rounded-lg max-w-[1440px] max-md:mt-10 max-md:max-w-full mt-24 bg-gradient-light">
+            <Section title="Institutional Website" description="A well-crafted website is an effective marketing and communication tool that fosters trust and generates leads." imageUrl={int} imageAlt="Institutional Website Image" />
+            <Section title="Ecommerce" description="Businesses can operate 24/7, 7 days a week, and reach customers in any time zone with eCommerce solutions." imageUrl={ecomm} imageAlt="Ecommerce Image" />
+            <Section title="Web Applications" description="Web applications can reach a global audience. They are interactive and attractive, and therefore can easily catch the attention of users." imageUrl={webapp} imageAlt="Web Applications Image" />
+            <Section title="Content Management System" description="By optimizing internal workflows, a dedicated CMS can save you time and money by meeting the specific needs of your business." imageUrl={CMS} imageAlt="CMS Image" />
+      </main>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
+      <main className="snap-start snap-always grid grid-cols-3 gap-4 w-full max-w-[1440px] max-md:mt-10 max-md:max-w-full mt-14">
+        <div className="col-auto">
+          <Image src={webdesign} loading="lazy" className="w-full mt-12 ml-14" alt="We build your website"/>
+        </div>
+        <div className="col-span-2">
+          <h1 className="text-5xl font-black text-shadow-xl text-cyan leading-[64px] py-8 px-28 mt-16">
+            Reinventing your business Image
+          </h1>
+          <p className="text-2xl px-28 tracking-wider text-white max-md:max-w-full">
+            Your digital storefront speaks volumes about your brand. A fresh website image isn't just about aesthetics it's about making a lasting impression. Stand out from the competition, attract more visitors, and convert them into loyal customers. Let's craft a compelling online identity that reflects the true essence of your business and propels you towards greater success.
           </p>
-        </a>
+        </div>
+      </main>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      <main className="px-5 mt-28 w-full max-w-[1362px] max-md:mt-10 max-md:max-w-full">
+        <ul className="grid grid-cols-4  mb-6">
+          <li className="text-center text-7xl">1</li>
+          <li className="text-center text-7xl">2</li>
+          <li className="text-center text-7xl">3</li>
+          <li className="text-center text-7xl">4</li>
+        </ul>
+        <ul className="steps grid grid-cols-4 grid-flow-row">
+          <li className="step step-primary" data-content=""></li>
+          <li className="step step-primary" data-content=""></li>
+          <li className="step step-primary" data-content=""></li>
+          <li className="step step-primary" data-content=""></li>
+        </ul>
+        <ul className="grid grid-cols-4 gap-8 grid-flow-row">
+          <Step title="Tell us about your idea" description="In the idea and planning phase, we define your goals, target audience, and desired website functionalities. Through research and collaboration, we outline clear project scope and timelines." />
+          <Step title="Design Prototyping" description="In the design phase, we bring your vision to life with carefully crafted visuals. Through wireframes and mockups, we create a user-friendly interface that represents your brand identity. Your input guides us as we refine the design to ensure it meets your expectations." />
+          <Step title="Design approval" description="In the design approval stage, we present our visual concepts tailored to your brand identity. Your feedback guides us to refine the design until it perfectly reflects your vision and meets your expectations." />
+          <Step title="Develop and deploy" description="In the development and deployment phase, we bring your website to life with expert coding and implementation. Rigorous testing ensures functionality, performance, and security." />
+        </ul>
+      </main>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      <main className="snap-start snap-always grid grid-cols-3 gap-4 w-full max-w-[1440px] max-md:mt-10 max-md:max-w-full mt-14">
+        <div className="col-auto">
+          <Image src={seo} loading="lazy" className="w-full mt-12 ml-14" alt="We build your website"/>
+        </div>
+        <div className="col-span-2 pt-10">
+          <h1 className="text-5xl font-black text-shadow-xl text-purple leading-[64px] py-8 px-28 mt-16">
+          SEO Optimization
+          </h1>
+          <p className="text-2xl px-28 tracking-wider text-white max-md:max-w-full">
+          Boost your online visibility and drive more traffic to your website with our expert SEO services! 
+          Stand out in search engine results, increase your site's ranking, and attract more potential customers. 
+          Let us optimize your online presence and watch your business soar to new heights. Contact us today to supercharge your SEO strategy!          </p>
+        </div>
+      </main>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+      <main className="mt-28 mx-14 bg-dark-gradient rounded-xl max-md:mt-10 max-md:max-w-full">
+          <h2 className="mt-12 text-6xl font-bold text-center text-green-500 text-shadow-m leading-[64px] max-md:max-w-full max-md:text-4xl">Performance Guaranteed</h2>
+          <div className="flex-wrap content-start px-5 mt-7 max-md:max-w-full">
+            <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+              <PerformanceMetric value={100} label="Performance" />
+              <PerformanceMetric value={93} label="Accessibility" />
+              <PerformanceMetric value={95} label="Best Practices" />
+              <PerformanceMetric value={100} label="SEO" /> 
+            </div>
+          </div>
+          <p className="text-slate-100 text-justify text-2xl p-8 px-24 mb-4">
+          Unlock the power of smooth, high-performing websites with us. <br/>
+          Our platforms are meticulously crafted to exceed Core Web Vitals benchmarks, ensuring rapid loading times and seamless user experiences.
+          <br/>Good scores can contribute to lower bounce rates, better engagement, and even higher conversions. Not to mention better search rankings.
+          <br/>
+          You check how a website perform with  
+          <Link className="text-blue-500 underline ml-2" href="https://pagespeed.web.dev/">Page Speed Insights.</Link>
           </p>
-        </a>
-      </div>
-    </main>
+      </main>
+
+      <Faq/>
+
+    </div>
   );
 }
+
+export default MyComponent;

@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Roboto.woff2) format('woff2');
+  }
+}
+.label-text {
+  @apply text-slate-300
+}
+.input, .textarea {
+  @apply bg-slate-300;
+  @apply border-emerald;
+  @apply caret-violet-600;
+  @apply text-slate-950;
+}
+.input:focus, .textarea:focus {
+  @apply outline-violet-400
+}
+:invalid {
+  @apply border-red-900;
+  @apply border-2
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,13 +44,26 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.text-shadow-xl {
+  text-shadow: 4px 4px 2px black;
+}
+
+.text-shadow-m {
+  text-shadow: 2px 2px 1px black;
+}
+
+.text-shadow-green{
+  text-shadow: 2px 2px 1px #31D292;
+}
+
+.box-shadow-green{
+  box-shadow: 6px 8px 1px 1px #31D292;
 }
 
 @layer utilities {
@@ -31,3 +71,180 @@ body {
     text-wrap: balance;
   }
 }
+
+.canvas {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 0px 0px 6px 4px black
+}
+
+
+.canvas::before,
+.canvas::after,
+.canvas > .circles,
+.canvas > .circles::before,
+.canvas > .circles::after {
+  -webkit-filter: blur(300px) opacity(0.5);
+  -moz-filter: blur(300px) opacity(0.5);
+  -o-filter: blur(300px) opacity(0.5);
+  -ms-filter: blur(300px) opacity(0.5);
+  filter: blur(200px);
+}
+
+.canvas > .circles,
+.canvas > .circles::before,
+.canvas > .circles::after {
+  border-radius: 100%;
+  position: absolute;
+}
+
+.canvas > .circles::before,
+.canvas > .circles::after {
+  content: "";
+  width: 140px;
+  height: 140px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.canvas > .circles {
+  width: 700px;
+  height: 700px;
+}
+
+.circles:nth-child(1){
+  background: radial-gradient(circle at center, rgba(49, 210, 146, .7) 0, rgba(49, 210, 146, 0.2) 100%);
+  top: 0px;
+  right: -350px;
+}
+
+.circles:nth-child(2){
+  background: radial-gradient(circle at center, rgba(65, 162, 246, 0.7) 0, rgba(65, 162, 246, 0.2) 100%);
+  top: 1100px;
+  left: -350px;
+}
+
+.circles:nth-child(3){
+  background: radial-gradient(circle at center, rgba(132, 61, 255, 0.7) 0, rgba(132, 61, 255, 0.2) 100%);
+  top: 2100px;
+  right: -350px;
+}
+
+
+.canvas > .circles::before {
+  left: -40%;
+}
+
+.canvas > .circles::after {
+  right: -20%;
+}
+
+.react-international-phone-country-selector{
+  position:relative;
+  
+}
+.react-international-phone-country-selector-button__button-content, .react-international-phone-country-selector, .react-international-phone-country-selector-button{
+  border-top-left-radius: 0.5rem!important;
+  border-bottom-left-radius: 0.5rem!important;
+}
+
+.react-international-phone-input-container input {
+  border: 1px solid #31D292;
+  border-top-right-radius: 0.5rem!important;
+  border-bottom-right-radius: 0.5rem!important;
+  
+}
+
+.react-international-phone-input-container input:focus{
+  outline: #a78bfa solid 2px;
+  outline-offset: 2px;
+  border: 1px!important;
+  border-color: transparent!important;
+}
+
+.react-international-phone-country-selector-button{
+  border-top: 1px solid #31D292;
+  border-bottom: 1px solid #31D292;
+  border-left: 1px solid #31D292;
+  display:flex;
+  height:var(--react-international-phone-height, 46px);
+  box-sizing:border-box;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  margin:0;
+  appearance:button;
+  -webkit-appearance:button;
+  background-color:var(--react-international-phone-country-selector-background-color, var(--react-international-phone-background-color, #cbd5e1));
+  cursor:pointer;
+  text-transform:none;
+  user-select:none
+}
+.react-international-phone-country-selector-button:hover{
+  background-color:var(--react-international-phone-country-selector-background-color-hover, whitesmoke)
+}
+.react-international-phone-country-selector-button--hide-dropdown{
+  cursor:auto
+}
+.react-international-phone-country-selector-button--hide-dropdown:hover{
+  background-color:transparent
+}
+.react-international-phone-country-selector-button__button-content{
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+.react-international-phone-country-selector-button__flag-emoji{
+  margin:0 4px
+}
+.react-international-phone-country-selector-button__flag-emoji--disabled{
+  opacity:.75
+}
+.react-international-phone-country-selector-button__dropdown-arrow{
+  border-top:var(--react-international-phone-country-selector-arrow-size, 4px) solid var(--react-international-phone-country-selector-arrow-color, #777);
+  border-right:var(--react-international-phone-country-selector-arrow-size, 4px) solid transparent;
+  border-left:var(--react-international-phone-country-selector-arrow-size, 4px) solid transparent;
+  margin-right:4px;
+  transition:all .1s ease-out
+}
+.react-international-phone-country-selector-button__dropdown-arrow--active{
+  transform:rotateX(180deg)
+}
+.react-international-phone-country-selector-button__dropdown-arrow--disabled{
+  border-top-color:var(--react-international-phone-disabled-country-selector-arrow-color, #999)
+}
+.react-international-phone-country-selector-button--disabled{
+  background-color:var(--react-international-phone-disabled-country-selector-background-color, var(--react-international-phone-disabled-background-color, whitesmoke));
+  cursor:auto
+}
+.react-international-phone-country-selector-button--disabled:hover{
+  background-color:var(--react-international-phone-disabled-country-selector-background-color, var(--react-international-phone-disabled-background-color, whitesmoke))
+}
+.react-international-phone-flag-emoji{
+  width:var(--react-international-phone-flag-width, 24px);height:var(--react-international-phone-flag-height, 24px);box-sizing:border-box
+}
+.react-international-phone-country-selector-dropdown{
+  position:absolute;
+  z-index:1;
+  top:var(--react-international-phone-dropdown-top, 44px);left:var(--react-international-phone-dropdown-left, 0);
+  display:flex;
+  width:300px;
+  max-height:200px;
+  flex-direction:column;
+  padding:4px 0;
+  margin:0;
+  background-color:var(--react-international-phone-dropdown-item-background-color, var(--react-international-phone-background-color, white));
+  box-shadow:var(--react-international-phone-dropdown-shadow, 2px 2px 16px rgba(0, 0, 0, .25));
+  color:var(--react-international-phone-dropdown-item-text-color, var(--react-international-phone-text-color, #222));
+  list-style:none;
+  overflow-y:scroll
+}
+.react-international-phone-country-selector-dropdown__preferred-list-divider{
+  height:1px;
+  border:none;
+  margin:var(--react-international-phone-dropdown-preferred-list-divider-margin, 0);
+  background:var(--react-international-phone-dropdown-preferred-list-divider-color, var(--react-international-phone-border-color, gainsboro))}.react-international-phone-country-selector-dropdown__list-item{display:flex;min-height:var(--react-international-phone-dropdown-item-height, 28px);box-sizing:border-box;align-items:center;padding:2px 8px}.react-international-phone-country-selector-dropdown__list-item-flag-emoji{margin-right:8px}.react-international-phone-country-selector-dropdown__list-item-country-name{overflow:hidden;margin-right:8px;font-size:var(--react-international-phone-dropdown-item-font-size, 14px);text-overflow:ellipsis;white-space:nowrap}.react-international-phone-country-selector-dropdown__list-item-dial-code{color:var(--react-international-phone-dropdown-item-dial-code-color, gray);font-size:var(--react-international-phone-dropdown-item-font-size, 14px)}.react-international-phone-country-selector-dropdown__list-item:hover{background-color:var(--react-international-phone-selected-dropdown-item-background-color, var(--react-international-phone-selected-dropdown-item-background-color, whitesmoke));cursor:pointer}.react-international-phone-country-selector-dropdown__list-item--selected,.react-international-phone-country-selector-dropdown__list-item--focused{background-color:var(--react-international-phone-selected-dropdown-item-background-color, whitesmoke);color:var(--react-international-phone-selected-dropdown-item-text-color, var(--react-international-phone-text-color, #222))}.react-international-phone-country-selector-dropdown__list-item--selected .react-international-phone-country-selector-dropdown__list-item-dial-code,.react-international-phone-country-selector-dropdown__list-item--focused .react-international-phone-country-selector-dropdown__list-item-dial-code{color:var(--react-international-phone-selected-dropdown-item-dial-code-color, var(--react-international-phone-dropdown-item-dial-code-color, gray))}.react-international-phone-country-selector-dropdown__list-item--focused{background-color:var(--react-international-phone-selected-dropdown-item-background-color, var(--react-international-phone-selected-dropdown-item-background-color, whitesmoke))}.react-international-phone-dial-code-preview{display:flex;align-items:center;justify-content:center;padding:0 8px;border:1px solid var(--react-international-phone-dial-code-preview-border-color, var(--react-international-phone-border-color, gainsboro));margin-right:-1px;background-color:var(--react-international-phone-dial-code-preview-background-color, var(--react-international-phone-background-color, white));color:var(--react-international-phone-dial-code-preview-text-color, var(--react-international-phone-text-color, #222));font-size:var(--react-international-phone-dial-code-preview-font-size, var(--react-international-phone-font-size, 13px))}.react-international-phone-dial-code-preview--disabled{background-color:var(--react-international-phone-dial-code-preview-disabled-background-color, var(--react-international-phone-disabled-background-color, whitesmoke));color:var(--react-international-phone-dial-code-preview-disabled-text-color, var(--react-international-phone-disabled-text-color, #666))}.react-international-phone-input-container{display:flex}.react-international-phone-input-container .react-international-phone-country-selector-button{border-radius:var(--react-international-phone-border-radius, 4px);margin-right:-1px;border-bottom-right-radius:0;border-top-right-radius:0}.react-international-phone-input-container .react-international-phone-input{overflow:visible;height:var(--react-international-phone-height, 36px);box-sizing:border-box;padding:0 8px;border:1px solid var(--react-international-phone-border-color, gainsboro);border-radius:var(--react-international-phone-border-radius, 4px);margin:0;background-color:var(--react-international-phone-background-color, white);border-bottom-left-radius:0;border-top-left-radius:0;color:var(--react-international-phone-text-color, #222);font-family:inherit;font-size:var(--react-international-phone-font-size, 13px)}.react-international-phone-input-container .react-international-phone-input:focus{outline:none}.react-international-phone-input-container .react-international-phone-input--disabled{background-color:var(--react-international-phone-disabled-background-color, whitesmoke);
+  color:var(--react-international-phone-disabled-text-color, #666)
+  }
