@@ -21,8 +21,8 @@ const DesignPreferencesInput: React.FC<inputProps> = ({data, setData}) => {
     };
    
     return (
-        <label className="flex flex-row my-16">
-            <div className="flex flex-col w-4/12 form-control">
+        <label className="md:flex md:flex-row my-16">
+            <div className="flex flex-col md:w-4/12 max-md:px-4 form-control">
                 <div className="label">
                     <span className="label-text">Design Preferences:</span>
                 </div>

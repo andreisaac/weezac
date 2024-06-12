@@ -3,9 +3,8 @@ import * as React from "react";
 import {useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
-import handshake from "@images/handshake.svg"
-import NavBar from "@components/navbar"
-import PrivacyPolicy from "@components/privacyPolicy"
+import handshake from "@images/handshake.svg";
+import PrivacyPolicy from "@components/privacyPolicy";
 import TextInput from "@components/input/textInput";
 import EmailInput from "@components/input/emailInput";
 import PhoneInput from "@components/input/phoneInput";
@@ -111,13 +110,12 @@ const Contact = () => {
     };
     
     return (
-        <div className="snap-mandatory bg-bg h-full min-h-screen">
-        <NavBar/>
+        <div className="snap-mandatory h-full min-h-screen">
         {true ? (
-        <section className="bg-dark-gradient rounded-lg drop-shadow-md border-t-8 border-b-8 border-emerald mx-28 my-8">
+        <section className="bg-dark-gradient rounded-lg drop-shadow-md border-t-8 border-b-8 border-emerald max-lg:mx-4 max-xl:mx-14 mx-28 my-8">
                 <h1 className="text-5xl text-slate-300 text-center font-bold mt-14">Get a quote to your project.</h1>
-                <div className="flex flex-row m-14 gap-8">
-                    <div className="flex flex-col w-5/12">
+                <div className="lg:flex lg:flex-row max-lg:m-4 lg:m-14 lg:gap-8">
+                    <div className="flex flex-col lg:w-5/12">
                         <TextInput label="Name:" placeholder="First and Last Name..." data={name} setData={setName}/>
                         <EmailInput label="Email:" placeholder="yourmail@provider.com..." data={email} setData={setEmail} error={error} setError={setError}/>
                         <PhoneInput label="Phone Number:" data={phone} setData={setPhone}/>
@@ -131,7 +129,7 @@ const Contact = () => {
                         <TextAreaInput label="Aditional comments:" placeholder="Tell us more about your business needs..." data={comments} setData={setComments}/>
                     </div>
                 </div>
-                <div className="form-control w-8/12 mx-auto mt-14">
+                <div className="form-control max-lg:mx-8 lg:w-8/12 mx-auto mt-14">
                     <label className="label">
                         <input type="checkbox" className="checkbox checkbox-accent" value="privacy" onChange={oChange}/>
                         <span className="label-text flex-1 ml-4"><b>Privacy Policy Agreement:</b> Confirm that they have read and agree to the website's <PrivacyPolicy/></span>   
@@ -139,7 +137,7 @@ const Contact = () => {
                 </div>
                 <div className="my-14 text-center">
                 {load ? (<span className="loading loading-spinner loading-lg"></span>):
-                    (<button className="text-xl px-5 py-2.5 font-bold rounded-xl shadow-contact disabled:cursor-not-allowed disabled:opacity-50 active:shadow-contact-active bg-slate-300 hover:bg-stone-300 text-slate-900" onClick={submit} disabled={disabled()}>Submit</button>)
+                    (<button className="text-xl px-5 py-2.5 font-bold rounded-xl shadow-contact disabled:cursor-not-allowed disabled:opacity-50 active:shadow-contact-active bg-slate-300 hover:bg-green-100 text-slate-900 transition ease-out hover:ease-in" onClick={submit} disabled={disabled()}>Submit</button>)
                 }
                 {submitError && submitErrorMessage ? (
                     submitErrorMessage.map((text:string, index)=>
