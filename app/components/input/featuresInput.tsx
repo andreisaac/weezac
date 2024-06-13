@@ -13,9 +13,9 @@ const FeaturesInput: React.FC<inputProps> = ({data, setData}) => {
     };
    
     return (
-        <label className="form-control w-full px-24 max-md:px-4">
+        <label className="form-control w-full max-lg:mt-8 px-24 max-md:px-4">
             <div className="label">
-                <span className="label-text">Key Features</span>
+                <span className="label-text ml-[-14px]">Key Features:</span>
             </div>
             <label className="label cursor-pointer">
                 <span className="label-text">Contact form</span> 

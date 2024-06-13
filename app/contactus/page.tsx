@@ -113,7 +113,7 @@ const Contact = () => {
         <div className="snap-mandatory h-full min-h-screen">
         {true ? (
         <section className="bg-dark-gradient rounded-lg drop-shadow-md border-t-8 border-b-8 border-emerald max-lg:mx-4 max-xl:mx-14 mx-28 my-8">
-                <h1 className="text-5xl text-slate-300 text-center font-bold mt-14">Get a quote to your project.</h1>
+                <h1 className="max-lg:text-3xl text-5xl text-slate-300 text-center font-bold mt-14">Get a quote to your project.</h1>
                 <div className="lg:flex lg:flex-row max-lg:m-4 lg:m-14 lg:gap-8">
                     <div className="flex flex-col lg:w-5/12">
                         <TextInput label="Name:" placeholder="First and Last Name..." data={name} setData={setName}/>

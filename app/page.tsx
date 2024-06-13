@@ -1,10 +1,13 @@
+"use client"
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {motion} from "framer-motion";
 import Faq from "@components/faq"
-import website from "./images/website.svg"
-import webdesign from "./images/webdesign.svg"
-import seo from "./images/seo.svg"
+import TypingAnimations from "@components/typingAnimation"
+import Website from "@components/svg/website"
+import Webdesign from "@components/svg/webdesign"
+import Rocket from "@components/svg/rocket"
 import webapp from "./images/webapp.svg"
 import CMS from "./images/CMS.svg"
 import ecomm from "./images/ecomm.svg"
@@ -33,16 +36,16 @@ const Section: React.FC<SectionProps> = ({ title, description, imageUrl, imageAl
     <div className="text-center mb-4 max-lg:mt-3.5 max-lg:max-w-full">
         <Image loading="lazy" src={imageUrl} alt={imageAlt} width={130} height={130} className="aspect-square max-lg:w-20 drop-shadow-lg" />
     </div>
-    <h3 className="text-center font-bold text-neutral-300 max-lg:text-xl mb-4 text-xl text-shadow-xl">
+    <p className="text-center font-bold text-neutral-300 max-lg:text-xl mb-4 text-xl text-shadow-xl">
       {title}
-    </h3>
+    </p>
     <div className="text-center text-shadow-m mt-2 text-lg text-white max-lg:text-md">{description}</div>
   </section>
 );
 
 const Step: React.FC<StepProps> = ({ title, number, description }) => (
   <li className="step step-primary lg:text-center text-slate-300" data-content="">
-    <h3 className="text-l font-bold text-xl lg:my-4 max-lg:ml-4"><label className="lg:hidden mr-2">{number}. </label> {title}</h3>
+    <p className="text-l font-bold text-xl lg:my-4 max-lg:ml-4"><label className="lg:hidden mr-2">{number}. </label> {title}</p>
     <p>{description}</p>
   </li>
 );
@@ -55,23 +58,38 @@ const PerformanceMetric: React.FC<PerformanceMetricProps> = ({ value, label }) =
 );
 
 
-const MyComponent = () => {
+const HomePage = () => {
+    const variantsL = {
+      hidden: {opacity: 0, x: -300,},
+      reveal: {opacity: 1, x: 0}
+    }
+    const variantsR = {
+      hidden: {opacity: 0, x: 300,},
+      reveal: {opacity: 1, x: 0}
+    }
   return (
-    <div className="flex flex-col items-center pb-20 snap-mandatory">
+    <div className="flex flex-col items-center pb-20">
       
-      <main className="snap-start snap-always lg:grid lg:grid-cols-3 gap-4 w-full max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-24 relative">
-        <div className="lg:col-span-2 z-50">
-          <h1 className="max-lg:text-4xl text-5xl font-black text-shadow-xl text-emerald leading-[64px] py-8 lg:px-8 px-28 mt-16 max-lg:py-2 max-lg:px-6 max-lg:mt-4">
-            We build your Website!
-          </h1>
+      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-3 gap-4 w-full max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-24 relative"
+        initial="hidden"
+        whileInView="reveal"
+        viewport={{ once: true }}
+      >
+        <motion.div className="lg:col-span-2 z-50"
+          variants={variantsL}
+          transition={{duration: 0.5, ease:"easeIn"}}>
+
+          <TypingAnimations text="We build your Website!" color="text-emerald"></TypingAnimations>
           <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-wider text-white">
             From responsive design to seamless functionality, we ensure your website stands out in today's competitive digital landscape.Partner with us to unlock the full potential of your online platform and drive meaningful results for your business.
           </p>
-        </div>
-        <div className="lg:col-auto max-lg:hidden">
-          <Image src={website} loading="lazy" className="w-full pt-8 pr-24 lg:pr-14 lg:pt-20" alt="We build your website"/>
-        </div>
-      </main>
+        </motion.div>
+        <motion.div className="lg:col-auto max-lg:hidden"
+          variants={variantsR}
+          transition={{duration: 0.5, ease:"easeIn"}}>
+          <Website></Website>
+        </motion.div>
+      </motion.main>
 
       <main className="grid max-lg:grid-cols-2 grid-cols-4 max-xl:gap-1 gap-14 bg-dark-gradient max-xl:mx-2 mx-14 max-lg:p-2 p-8 rounded-lg max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-24 bg-gradient-light">
             <Section title="Institutional Website" description="A well-crafted website is an effective marketing and communication tool that fosters trust and generates leads." imageUrl={int} imageAlt="Institutional Website Image" />
@@ -80,19 +98,25 @@ const MyComponent = () => {
             <Section title="Content Management System" description="By optimizing internal workflows, a dedicated CMS can save you time and money by meeting the specific needs of your business." imageUrl={CMS} imageAlt="CMS Image" />
       </main>
 
-      <main className="snap-start snap-always lg:grid lg:grid-cols-3 gap-4 w-full max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-14">
-        <div className="col-auto max-lg:hidden">
-          <Image src={webdesign} loading="lazy" className="w-full mt-12 ml-14" alt="We build your website"/>
-        </div>
-        <div className="lg:col-span-2 max-lg:w-full">
-          <h1 className="text-5xl max-lg:text-4xl font-black text-shadow-xl text-cyan max-xl:px-10 py-8 xl:px-28 xl:mt-16">
-            Reinventing your business Image
-          </h1>
-          <p className="text-2xl tracking-wider text-white max-lg:text-lg max-xl:px-10 px-28">
+      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-3 gap-4 w-full max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-14"
+        initial="hidden"
+        whileInView="reveal"
+        viewport={{ once: true }}
+      >
+        <motion.div className="col-auto max-lg:hidden"
+          variants={variantsL}
+          transition={{duration: 0.5, ease:"easeIn"}}>
+          <Webdesign></Webdesign>
+        </motion.div>
+        <motion.div className="lg:col-span-2 max-lg:w-full"
+          variants={variantsR}
+          transition={{duration: 0.5, ease:"easeIn"}}>
+          <TypingAnimations text="Reinventing your business Image!" color="text-cyan"></TypingAnimations>
+          <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-wider text-white">
             Your digital storefront speaks volumes about your brand. A fresh website image isn't just about aesthetics it's about making a lasting impression. Stand out from the competition, attract more visitors, and convert them into loyal customers. Let's craft a compelling online identity that reflects the true essence of your business and propels you towards greater success.
           </p>
-        </div>
-      </main>
+        </motion.div>
+      </motion.main>
 
       <main className="max-lg:grid max-lg:grid-cols-6 px-5 mt-28 max-xl:mt-16 max-lg:max-w-full">
         <ul className="grid grid-cols-4 mb-6 max-lg:hidden">
@@ -115,25 +139,31 @@ const MyComponent = () => {
         </ul>
       </main>
 
-      <main className="snap-start snap-always lg:grid lg:grid-cols-3 gap-4 w-full max-w-[1440px] max-lg:mt-10 xl:mt-14">
-        <div className="col-auto max-lg:hidden">
-          <Image src={seo} loading="lazy" className="w-full mt-12 ml-14" alt="We build your website"/>
-        </div>
-        <div className="col-span-2 xl:pt-10">
-          <h1 className="text-5xl max-lg:text-4xl font-black text-shadow-xl text-purple leading-[64px] py-8 max-lg:px-8 px-28 max-lg:mt-2 mt-16">
-          SEO Optimization
-          </h1>
-          <p className="max-lg:text-lg text-2xl max-lg:px-8 px-28 tracking-wider text-white">
+      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-3 gap-4 w-full max-w-[1440px] max-lg:mt-10 xl:mt-14"
+        initial="hidden"
+        whileInView="reveal"
+        viewport={{ once: true }}
+      >
+        <motion.div className="col-auto max-lg:hidden"
+          variants={variantsL}
+          transition={{duration: 0.5, ease:"easeIn"}}>
+          <Rocket></Rocket>
+        </motion.div>
+        <motion.div className="col-span-2 xl:pt-10"
+          variants={variantsR}
+          transition={{duration: 0.5, ease:"easeIn"}}>
+          <TypingAnimations text="SEO Optimization!" color="text-purple"></TypingAnimations>
+          <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-wider text-white">
           Boost your online visibility and drive more traffic to your website with our expert SEO services! 
           Stand out in search engine results, increase your site's ranking, and attract more potential customers. 
           Let us optimize your online presence and watch your business soar to new heights. Contact us today to supercharge your SEO strategy!          </p>
-        </div>
-      </main>
+        </motion.div>
+      </motion.main>
 
       <main className="max-lg:mt-14 mt-28 max-lg:mx-2 mx-14 bg-dark-gradient rounded-xl">
           <h2 className="mt-12 text-6xl font-bold text-center text-green-500 text-shadow-m leading-[64px] max-lg:max-w-full max-lg:text-4xl">Performance Guaranteed</h2>
-          <div className="content-start px-5 mt-7 max-lg:max-w-full">
-            <div className="flex flex-wrap  gap-5 max-lg:gap-0">
+          <div className="px-5 mt-7 w-full">
+            <div className="flex max-lg:flex-wrap gap-4 max-lg:gap-0 w-full">
               <PerformanceMetric value={100} label="Performance" />
               <PerformanceMetric value={93} label="Accessibility" />
               <PerformanceMetric value={95} label="Best Practices" />
@@ -156,4 +186,4 @@ const MyComponent = () => {
   );
 }
 
-export default MyComponent;
+export default HomePage;
