@@ -19,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark" className="scroll-smooth overflow-y-scroll">
       <body className={inter.className}>
+        <Analytics/>
         <div className="flex canvas bg-darkerBlue">
             <div className="circles z-0"/>
             <div className="circles z-0"/>
