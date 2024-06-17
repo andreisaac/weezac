@@ -24,14 +24,12 @@ export default function RootLayout({
             <div className="circles z-0"/>
             <div className="circles z-0"/>
             <div className="circles z-0"/>
-          <section className="flex w-1/12 max-2xl:w-0 z-0"/>
-          <section className="flex w-10/12 max-2xl:w-full z-10">
+          <section className="mx-auto w-[1340px] max-2xl:w-full z-10">
             <div className="z-10 w-full">
               <NavBar/>
               {children}
             </div>
           </section>
-          <section className="flex w-1/12 max-2xl:w-0 z-0"/>
         </div>
       </body>
     </html>

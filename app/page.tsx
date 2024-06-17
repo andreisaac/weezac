@@ -70,12 +70,12 @@ const HomePage = () => {
   return (
     <div className="flex flex-col items-center pb-20">
       
-      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-3 gap-4 w-full max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-24 relative"
+      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-4 gap-4 w-full max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-24 relative"
         initial="hidden"
         whileInView="reveal"
         viewport={{ once: true }}
       >
-        <motion.div className="lg:col-span-2 z-50"
+        <motion.div className="lg:col-span-3 z-50"
           variants={variantsL}
           transition={{duration: 0.5, ease:"easeIn"}}>
 
@@ -91,7 +91,7 @@ const HomePage = () => {
         </motion.div>
       </motion.main>
 
-      <main className="grid max-lg:grid-cols-2 grid-cols-4 max-xl:gap-1 gap-14 bg-dark-gradient max-xl:mx-2 mx-14 max-lg:p-2 p-8 rounded-lg max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-24 bg-gradient-light">
+      <main className="grid max-lg:grid-cols-2 grid-cols-4 max-xl:gap-1 gap-14 bg-light-gradient max-xl:mx-2 mx-14 max-lg:p-2 p-8 rounded-lg max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-24 bg-gradient-light">
             <Section title="Institutional Website" description="A well-crafted website is an effective marketing and communication tool that fosters trust and generates leads." imageUrl={int} imageAlt="Institutional Website Image" />
             <Section title="Ecommerce" description="Businesses can operate 24/7, 7 days a week, and reach customers in any time zone with eCommerce solutions." imageUrl={ecomm} imageAlt="Ecommerce Image" />
             <Section title="Web Applications" description="Web applications can reach a global audience. They are interactive and attractive, and therefore can easily catch the attention of users." imageUrl={webapp} imageAlt="Web Applications Image" />
@@ -160,7 +160,7 @@ const HomePage = () => {
         </motion.div>
       </motion.main>
 
-      <main className="max-lg:mt-14 mt-28 max-lg:mx-2 mx-14 bg-dark-gradient rounded-xl">
+      <main className="max-lg:mt-14 mt-28 max-lg:mx-2 mx-14 bg-light-gradient rounded-xl">
           <h2 className="mt-12 text-6xl font-bold text-center text-green-500 text-shadow-m leading-[64px] max-lg:max-w-full max-lg:text-4xl">Performance Guaranteed</h2>
           <div className="px-5 mt-7 w-full">
             <div className="flex max-lg:flex-wrap gap-4 max-lg:gap-0 w-full">
