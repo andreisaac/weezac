@@ -28,7 +28,7 @@ const Faq = () => {
 
         <div className="collapse collapse-arrow border-t border-t-slate-300 border-transparente my-2 rounded-none">
             <input type="radio" name="my-accordion-2"/> 
-            <div className="collapse-title text-xl font-medium mt-2">
+            <div className="collapse-title max-md:text-base text-xl font-medium mt-2">
             What is your web development process like?
             </div>
             <div className="collapse-content"> 
@@ -81,7 +81,7 @@ const Faq = () => {
 
         <div className="collapse collapse-arrow border-t border-t-slate-300 border-transparente my-2 rounded-none">
             <input type="radio" name="my-accordion-2" /> 
-            <div className="collapse-title text-xl font-medium mt-2">
+            <div className="collapse-title max-md:text-base text-xl font-medium mt-2">
             How long does it typically take to complete a web development project?
             </div>
             <div className="collapse-content"> 
@@ -116,7 +116,7 @@ const Faq = () => {
 
         <div className="collapse collapse-arrow border-t border-t-slate-300 border-transparente my-2 rounded-none">
             <input type="radio" name="my-accordion-2" /> 
-            <div className="collapse-title text-xl font-medium mt-2">
+            <div className="collapse-title max-md:text-base text-xl font-medium mt-2">
             Do you provide ongoing maintenance and support for websites after launch?
             </div>
             <div className="collapse-content"> 
@@ -139,7 +139,7 @@ const Faq = () => {
 
         <div className="collapse collapse-arrow border-t border-t-slate-300 border-transparente my-2 rounded-none">
             <input type="radio" name="my-accordion-2" /> 
-            <div className="collapse-title text-xl font-medium mt-2">
+            <div className="collapse-title max-md:text-base text-xl font-medium mt-2">
             I need to deal with website hosting and domain registration?
             </div>
             <div className="collapse-content"> 
@@ -159,7 +159,7 @@ const Faq = () => {
 
         <div className=" collapse collapse-arrow border-y border-y-slate-300 border-transparente my-2 rounded-none">
             <input type="radio" name="my-accordion-2" /> 
-            <div className="collapse-title text-xl font-medium mt-2">
+            <div className="collapse-title max-md:text-base text-xl font-medium mt-2">
             Can you create a visual identity?
             </div>
             <div className="collapse-content"> 
