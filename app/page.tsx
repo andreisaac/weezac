@@ -70,14 +70,14 @@ const HomePage = () => {
   return (
     <div className="flex flex-col items-center pb-20">
       
-      <main className="snap-start snap-always lg:grid lg:grid-cols-4 gap-4 w-full max-lg:mt-10 max-lg:max-w-full max-2xl:mt-24 2xl:mt-[-180px] relative" >
-        <div className="lg:col-span-3 xl:col-span-2 lg:pt-10 xl:mt-14 relative top-[180px]" >
+      <main className="snap-start snap-always lg:grid lg:grid-cols-4 gap-4 w-full max-lg:mt-10 max-lg:max-w-full max-2xl:mt-24 xl:mt-[-180px] relative" >
+        <div className="lg:col-span-3 xl:col-span-2 lg:pt-10 xl:mt-14 relative xl:top-[180px]" >
           <TypingAnimations text="We build your Website!" color="text-emerald"></TypingAnimations>
           <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
             From responsive design to seamless functionality, we ensure your website stands out in today's competitive digital landscape.Partner with us to unlock the full potential of your online platform and drive meaningful results for your business.
           </p>
         </div>
-        <div className="lg:col-auto xl:col-span-2 max-lg:hidden lg:mt-36 xl:mt-24 relative top-[150px]">
+        <div className="lg:col-auto xl:col-span-2 max-lg:hidden lg:mt-36 xl:mt-24 relative xl:top-[150px]">
           <Website></Website>
         </div>
       </main>
