@@ -70,7 +70,7 @@ const HomePage = () => {
   return (
     <div className="flex flex-col items-center pb-20">
       
-      <main className="snap-start snap-always lg:grid lg:grid-cols-4 gap-4 w-full max-lg:mt-10 max-lg:max-w-full max-2xl:mt-24 2xl:mt-[-100px] relative" >
+      <main className="snap-start snap-always lg:grid lg:grid-cols-4 gap-4 w-full max-lg:mt-10 max-lg:max-w-full max-2xl:mt-24 2xl:mt-[-180px] relative" >
         <div className="lg:col-span-3 xl:col-span-2 lg:pt-10 xl:mt-14 relative top-[180px]" >
           <TypingAnimations text="We build your Website!" color="text-emerald"></TypingAnimations>
           <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
