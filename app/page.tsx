@@ -70,49 +70,40 @@ const HomePage = () => {
   return (
     <div className="flex flex-col items-center pb-20">
       
-      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-4 gap-4 w-full max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-24 relative"
-        initial="hidden"
-        whileInView="reveal"
-        viewport={{ once: true }}
-      >
-        <motion.div className="lg:col-span-3 z-50"
-          variants={variantsL}
-          transition={{duration: 0.5, ease:"easeIn"}}>
-
+      <main className="snap-start snap-always lg:grid lg:grid-cols-4 gap-4 w-full max-lg:mt-10 max-lg:max-w-full max-2xl:mt-24 2xl:mt-[-100px] relative" >
+        <div className="lg:col-span-3 xl:col-span-2 lg:pt-10 xl:mt-14 relative top-[180px]" >
           <TypingAnimations text="We build your Website!" color="text-emerald"></TypingAnimations>
-          <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-wider text-white">
+          <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
             From responsive design to seamless functionality, we ensure your website stands out in today's competitive digital landscape.Partner with us to unlock the full potential of your online platform and drive meaningful results for your business.
           </p>
-        </motion.div>
-        <motion.div className="lg:col-auto max-lg:hidden"
-          variants={variantsR}
-          transition={{duration: 0.5, ease:"easeIn"}}>
+        </div>
+        <div className="lg:col-auto xl:col-span-2 max-lg:hidden lg:mt-36 xl:mt-24 relative top-[150px]">
           <Website></Website>
-        </motion.div>
-      </motion.main>
+        </div>
+      </main>
 
-      <main className="grid max-lg:grid-cols-2 grid-cols-4 max-xl:gap-1 gap-14 bg-light-gradient max-xl:mx-2 mx-14 max-lg:p-2 p-8 rounded-lg max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-24 bg-gradient-light">
+      <main className="grid max-lg:grid-cols-2 grid-cols-4 2xl:pt-14 max-xl:gap-1 gap-14 bg-light-gradient max-xl:mx-2 mx-14 max-lg:p-2 p-8 rounded-lg max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-24 bg-gradient-light">
             <Section title="Institutional Website" description="A well-crafted website is an effective marketing and communication tool that fosters trust and generates leads." imageUrl={int} imageAlt="Institutional Website Image" />
             <Section title="Ecommerce" description="Businesses can operate 24/7, 7 days a week, and reach customers in any time zone with eCommerce solutions." imageUrl={ecomm} imageAlt="Ecommerce Image" />
             <Section title="Web Applications" description="Web applications can reach a global audience. They are interactive and attractive, and therefore can easily catch the attention of users." imageUrl={webapp} imageAlt="Web Applications Image" />
             <Section title="Content Management System" description="By optimizing internal workflows, a dedicated CMS can save you time and money by meeting the specific needs of your business." imageUrl={CMS} imageAlt="CMS Image" />
       </main>
 
-      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-3 gap-4 w-full max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-14"
+      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-4 gap-4 w-full max-w-[1440px] max-lg:mt-10 max-lg:max-w-full mt-14"
         initial="hidden"
         whileInView="reveal"
         viewport={{ once: true }}
       >
-        <motion.div className="col-auto max-lg:hidden"
+        <motion.div className="lg:col-auto xl:col-span-2 max-lg:hidden lg:mt-36 xl:mt-24"
           variants={variantsL}
           transition={{duration: 0.5, ease:"easeIn"}}>
           <Webdesign></Webdesign>
         </motion.div>
-        <motion.div className="lg:col-span-2 max-lg:w-full"
+        <motion.div className="lg:col-span-3 xl:col-span-2 lg:pt-10 xl:mt-14"
           variants={variantsR}
           transition={{duration: 0.5, ease:"easeIn"}}>
           <TypingAnimations text="Reinventing your business Image!" color="text-cyan"></TypingAnimations>
-          <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-wider text-white">
+          <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
             Your digital storefront speaks volumes about your brand. A fresh website image isn't just about aesthetics it's about making a lasting impression. Stand out from the competition, attract more visitors, and convert them into loyal customers. Let's craft a compelling online identity that reflects the true essence of your business and propels you towards greater success.
           </p>
         </motion.div>
@@ -139,21 +130,21 @@ const HomePage = () => {
         </ul>
       </main>
 
-      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-3 gap-4 w-full max-w-[1440px] max-lg:mt-10 xl:mt-14"
+      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-4 gap-4 w-full max-w-[1440px] max-lg:mt-10 xl:mt-14"
         initial="hidden"
         whileInView="reveal"
         viewport={{ once: true }}
       >
-        <motion.div className="col-auto max-lg:hidden"
+        <motion.div className="lg:col-auto xl:col-span-2 max-lg:hidden lg:mt-36 xl:mt-24"
           variants={variantsL}
           transition={{duration: 0.5, ease:"easeIn"}}>
           <Rocket></Rocket>
         </motion.div>
-        <motion.div className="col-span-2 xl:pt-10"
+        <motion.div className="lg:col-span-3 xl:col-span-2 lg:pt-10 xl:mt-14"
           variants={variantsR}
           transition={{duration: 0.5, ease:"easeIn"}}>
           <TypingAnimations text="SEO Optimization!" color="text-purple"></TypingAnimations>
-          <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-wider text-white">
+          <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
           Boost your online visibility and drive more traffic to your website with our expert SEO services! 
           Stand out in search engine results, increase your site's ranking, and attract more potential customers. 
           Let us optimize your online presence and watch your business soar to new heights. Contact us today to supercharge your SEO strategy!          </p>
