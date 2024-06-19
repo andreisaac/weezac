@@ -111,7 +111,7 @@ const Contact = () => {
     
     return (
         <div className="snap-mandatory h-full min-h-screen">
-        {true ? (
+        {!submited ? (
         <section className="bg-dark-gradient rounded-lg drop-shadow-md border-t-8 border-b-8 border-emerald max-lg:mx-4 max-xl:mx-14 mx-28 my-8">
                 <h1 className="max-lg:text-3xl text-5xl text-slate-300 text-center font-bold mt-14">Get a quote to your project.</h1>
                 <div className="lg:flex lg:flex-row max-lg:m-4 lg:m-14 lg:gap-8">
@@ -150,15 +150,16 @@ const Contact = () => {
                 </div>
             </section>
         ) : (
-            <section className="bg-dark-gradient rounded-lg drop-shadow-md border-t-8 border-b-8 border-emerald mx-28 my-8 mt-[20%]">
+            <section className="bg-dark-gradient rounded-lg drop-shadow-md border-t-8 border-b-8 border-emerald mx-4 lg:mx-28 my-8 md:mt-[20%]">
                 <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-                <article className="flex flex-col w-[30%] max-md:ml-0 max-md:w-full bg-slate-300">
-                    <Image src={handshake} alt="handshake for quote" width={400} height={300} className=""/>
+                <article className="flex flex-col w-[30%] max-md:ml-0 max-md:w-full bg-slate-300 max-md:hidden">
+                    <Image src={handshake} alt="handshake for quote" width={400} height={300} className="mx-auto"/>
                 </article>
                 <article className="flex flex-col text-slate-300 px-6 w-[70%] max-md:ml-0 max-md:w-full">
                     <h3 className="text-5xl font-black my-4 mt-10">Thank you!</h3>
                     <p className="text-xl my-4 px-4">Our team is currently reviewing your request and will be in touch shortly to discuss your requirements in more detail. In the meantime, if you have any additional questions or need further information, please do not hesitate to contact us at <Link href="mailto:info@weezac.pt" className="text-blue-600 underline hover:text-slate-300 ">info@weezac.pt</Link>.</p>
                     <p className="text-xl my-4 px-4">We look forward to the possibility of collaborating with you and contributing to the success of {organization}.</p>
+                    <Image src={handshake} alt="handshake for quote" width={400} height={300} className="mx-auto md:hidden"/>
                 </article>
                 </div>
             </section>
