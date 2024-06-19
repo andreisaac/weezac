@@ -82,7 +82,7 @@ const HomePage = () => {
         </div>
       </main>
 
-      <main className="grid max-lg:grid-cols-2 grid-cols-4 2xl:pt-14 max-xl:gap-1 gap-14 bg-light-gradient max-xl:mx-2 mx-14 max-lg:p-2 p-8 rounded-lg max-lg:mt-10 xl:mt-24 bg-gradient-light">
+      <main className="grid max-lg:grid-cols-2 grid-cols-4 2xl:pt-14 max-xl:gap-1 gap-14 bg-light-gradient max-lg:mx-2 max-lg:p-2 p-8 rounded-lg max-lg:mt-10 xl:mt-24 bg-gradient-light">
             <Section title="Institutional Website" description="A well-crafted website is an effective marketing and communication tool that fosters trust and generates leads." imageUrl={int} imageAlt="Institutional Website Image" />
             <Section title="Ecommerce" description="Businesses can operate 24/7, 7 days a week, and reach customers in any time zone with eCommerce solutions." imageUrl={ecomm} imageAlt="Ecommerce Image" />
             <Section title="Web Applications" description="Web applications can reach a global audience. They are interactive and attractive, and therefore can easily catch the attention of users." imageUrl={webapp} imageAlt="Web Applications Image" />
@@ -103,13 +103,13 @@ const HomePage = () => {
           variants={variantsR}
           transition={{duration: 0.5, ease:"easeIn"}}>
           <TypingAnimations text="Reinventing your business Image!" color="text-cyan"></TypingAnimations>
-          <p className="lg:text-lg xl:text-2xl max-lg:mt-14 max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
+          <p className="lg:text-lg xl:text-2xl max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
             Your digital storefront speaks volumes about your brand. A fresh website image isn't just about aesthetics it's about making a lasting impression. Stand out from the competition, attract more visitors, and convert them into loyal customers. Let's craft a compelling online identity that reflects the true essence of your business and propels you towards greater success.
           </p>
         </motion.div>
       </motion.main>
 
-      <main className="max-lg:grid max-lg:grid-cols-6 px-5 xl:mt-4">
+      <main className="max-lg:grid max-lg:grid-cols-6 px-5 mt-14 lg:mt-8 xl:mt-4">
         <ul className="grid grid-cols-4 mb-6 max-lg:hidden">
           <li className="text-center text-7xl max-lg:text-xl">1</li>
           <li className="text-center text-7xl max-lg:text-xl">2</li>
@@ -130,7 +130,7 @@ const HomePage = () => {
         </ul>
       </main>
 
-      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-5 lg:mt-14"
+      <motion.main className="snap-start snap-always lg:grid lg:grid-cols-5 mt-14"
         initial="hidden"
         whileInView="reveal"
         viewport={{ once: true }}
@@ -144,14 +144,14 @@ const HomePage = () => {
           variants={variantsR}
           transition={{duration: 0.5, ease:"easeIn"}}>
           <TypingAnimations text="SEO Optimization!" color="text-purple"></TypingAnimations>
-          <p className="lg:text-lg xl:text-2xl max-lg:mt-14 max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
+          <p className="lg:text-xl xl:text-2xl max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
           Boost your online visibility and drive more traffic to your website with our expert SEO services! 
           Stand out in search engine results, increase your site's ranking, and attract more potential customers. 
           Let us optimize your online presence and watch your business soar to new heights. Contact us today to supercharge your SEO strategy!          </p>
         </motion.div>
       </motion.main>
 
-      <main className="max-lg:mx-2 mx-14 bg-light-gradient rounded-xl">
+      <main className="max-lg:mx-2 bg-light-gradient rounded-xl mt-14">
           <h2 className="mt-8 text-center text-green-500 text-shadow-m max-lg:text-4xl text-5xl font-bold">Performance is vital</h2>
           <div className="px-5 mt-7 w-full">
             <div className="flex max-lg:flex-wrap gap-4 max-lg:gap-0 w-full">
