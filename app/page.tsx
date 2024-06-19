@@ -70,8 +70,8 @@ const HomePage = () => {
   return (
     <div className="flex flex-col items-center pb-20 z-10">
       
-      <main className="snap-start snap-always lg:grid lg:grid-cols-5 gap-4 w-full max-lg:mt-10 max-lg:max-w-full max-2xl:mt-24 lg:mt-[-10px] xl:mt-[-280px] relative" >
-        <div className="lg:col-span-3 xl:col-span-3 lg:pt-10 xl:mt-14 relative lg:top-[-80px] xl:top-[140px] 2xl:top-[180px]" >
+      <main className="snap-start snap-always lg:grid lg:grid-cols-5 gap-4 w-full max-lg:mt-10 max-lg:max-w-full max-2xl:mt-24 lg:mt-[-10px] xl:mt-[-220px] relative" >
+        <div className="lg:col-span-3 xl:col-span-3 lg:pt-10 xl:mt-14 relative lg:top-[-50px] xl:top-[140px] 2xl:top-[140px]" >
           <TypingAnimations text="We build your Website!" color="text-emerald"></TypingAnimations>
           <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
             From responsive design to seamless functionality, we ensure your website stands out in today's competitive digital landscape.Partner with us to unlock the full potential of your online platform and drive meaningful results for your business.
