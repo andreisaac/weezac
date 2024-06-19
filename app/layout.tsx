@@ -24,7 +24,7 @@ export default function RootLayout({
             <div className="circles z-0"/>
             <div className="circles z-0"/>
             <div className="circles z-0"/>
-          <section className="mx-auto w-[1340px] max-2xl:w-full z-10">
+          <section className="mx-auto w-[1400px] max-2xl:w-full z-10">
             <div className="z-10 w-full">
               <NavBar/>
               {children}

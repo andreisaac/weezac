@@ -9,7 +9,7 @@ const navbar = () => {
   const [toggle, setToggle] = useState(false);
 
     return (
-        <header className="flex flex-wrap select-none gap-0 content-center self-stretch text-white">
+        <header className="flex flex-wrap select-none gap-0 content-center self-stretch text-white z-50 relative">
         <Link href="/" className="flex-wrap font-bold flex-1 justify-center px-12 text-5xl max-lg:hidden text-neutral-300"><Image src={logo} width={90} height={90} loading="lazy" alt="weezac" className="max-lg:w-[50px] inline-block pb-4 mr-[-8px]"></Image>eezac</Link>
         <nav className="flex flex-none gap-5 items-center px-12 py-5 text-lg leading-5 max-lg:hidden">
           <Link href="/" className="self-stretch my-auto hover:text-blue-400">Homepage</Link>
