@@ -17,11 +17,11 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ imgSrc, altText, title, className }) => {
   return (
-    <article className={`max-md:w-[50%] max-md:mx-auto max-md:m-4 max-md:p-0.5 md:pt-0.5 rounded-2xl shadow-xl bg-stone-300 z-50 ${className}`}>
+    <article className={`max-md:w-[50%] max-md:mx-auto max-md:m-4 max-md:p-0.5 md:pt-0.5 rounded-2xl shadow-xl bg-stone-300 bg-opacity-70 z-50 ${className}`}>
       <div className="md:m-6 rounded-2xl select-none">
         <Image loading="lazy" src={imgSrc} alt={altText} className="w-full rounded-2xl" />
       </div>
-      <div className="max-md:hidden py-4 text-2xl font-bold text-center text-slate-200 bg-indigo-950 rounded-b-2xl">
+      <div className="max-md:hidden py-4 text-2xl font-bold text-center text-slate-200 bg-indigo-950 rounded-b-2xl bg-opacity-70">
         {title}
       </div>
     </article>
@@ -40,7 +40,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ imgSrc, altText, title, link }) => 
 
 
   return (
-    <article className="max-md:w-[50%] max-md:mx-auto max-md:m-4 md:p-0.5 rounded-2xl shadow-xl bg-blue-400 z-50 md:scale-125">
+    <article className="max-md:w-[50%] max-md:mx-auto max-md:m-4 md:p-0.5 rounded-2xl shadow-xl bg-blue-400 bg-opacity-70 z-50 md:scale-125">
         <Link href={link} target="new">
         <Image loading="lazy" src={imgSrc} alt={altText} className="md:hidden rounded-2xl" />
         <div className="max-md:hidden mockup-browser bg-base-300 md:m-4 shadow-xl select-none">
@@ -55,7 +55,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ imgSrc, altText, title, link }) => 
             </div>
         </div>
         </Link>
-        <div className="max-md:hidden py-4 text-2xl font-bold tracking-wide text-center text-slate-200 bg-indigo-950 rounded-b-2xl">
+        <div className="max-md:hidden py-4 text-2xl font-bold tracking-wide text-center text-slate-200 bg-indigo-950 rounded-b-2xl bg-opacity-70">
         {title}
         </div>
     </article>
