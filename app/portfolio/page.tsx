@@ -17,16 +17,17 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ imgSrc, altText, title, className }) => {
   return (
-    <article className={`p-0.5 rounded-2xl shadow-xl bg-stone-300 z-50 ${className}`}>
-      <div className="m-6 rounded-2xl select-none">
+    <article className={`max-md:w-[50%] max-md:mx-auto max-md:m-4 max-md:p-0.5 md:pt-0.5 rounded-2xl shadow-xl bg-stone-300 z-50 ${className}`}>
+      <div className="md:m-6 rounded-2xl select-none">
         <Image loading="lazy" src={imgSrc} alt={altText} className="w-full rounded-2xl" />
       </div>
-      <div className="py-4 text-2xl tracking-wide text-center text-slate-200 bg-slate-800 rounded-b-2xl">
+      <div className="max-md:hidden py-4 text-2xl font-bold text-center text-slate-200 bg-indigo-950 rounded-b-2xl">
         {title}
       </div>
     </article>
   );
 };
+
 
 interface InfoCardProps {
   imgSrc: StaticImageData;
@@ -39,12 +40,13 @@ const InfoCard: React.FC<InfoCardProps> = ({ imgSrc, altText, title, link }) => 
 
 
   return (
-    <article className="max-md:mt-4 p-0.5 rounded-2xl shadow-xl bg-blue-400 z-50 md:scale-125">
+    <article className="max-md:w-[50%] max-md:mx-auto max-md:m-4 md:p-0.5 rounded-2xl shadow-xl bg-blue-400 z-50 md:scale-125">
         <Link href={link} target="new">
-        <div className="mockup-browser bg-base-300 m-4 shadow-xl select-none">
+        <Image loading="lazy" src={imgSrc} alt={altText} className="md:hidden rounded-2xl" />
+        <div className="max-md:hidden mockup-browser bg-base-300 md:m-4 shadow-xl select-none">
             <div className="mockup-browser-toolbar">
                 <div className="border border-slate-400 text-slate-400 w-full rounded pl-2 mx-2">
-                    <Image loading="lazy" src={magnifier} alt={altText} className="max-lg:hidden w-4 inline mr-2 " />
+                    <Image loading="lazy" src={magnifier} alt={altText} className="max-lg:hidden w-auto inline mr-2 " />
                     {link}
                 </div>
             </div>
@@ -53,9 +55,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ imgSrc, altText, title, link }) => 
             </div>
         </div>
         </Link>
-       
-
-        <div className="py-4 text-2xl tracking-wide text-center text-slate-200 bg-slate-800 rounded-b-2xl">
+        <div className="max-md:hidden py-4 text-2xl font-bold tracking-wide text-center text-slate-200 bg-indigo-950 rounded-b-2xl">
         {title}
         </div>
     </article>
@@ -72,7 +72,7 @@ const MyComponent: React.FC = () => {
     <main className="">
 
     <section className="p-4 flex flex-col relative max-md:mt-4 max-md:bg-light-gradient max-md:rounded-xl max-md:mx-2 ">
-      <h1 className="md:mb-6 md:text-6xl text-4xl font-black tracking-widest text-center md:leading-[64px] text-slate-300 hover:text-emerald h">
+      <h1 className="max-md:my-4 md:mb-6 md:text-6xl text-4xl font-black tracking-widest text-center md:leading-[64px] text-slate-300 hover:text-emerald h">
         <Link href="https://flordojamor.pt" target="new">
         <span className="text-sky-400">Restaurante </span>
         <span>Flor do Jamor</span>
@@ -81,23 +81,32 @@ const MyComponent: React.FC = () => {
       <div className="w-[500px] h-[500px] rounded-full left-[30%] top-[20%] blur-[200px] absolute bg-cyan z-0"></div>
       <div className="md:mt-14 z-20">
         <div className="flex max-md:flex-col">
-          <div className="md:mt-8 w-[30%] max-md:w-full">
+          <div className="max-md:flex max-md:flex-col max-md::mt-8 w-[30%] max-md:w-full">
             <Card imgSrc={menus} altText="Branding image" title="Branding" className="mt-44 max-md:mt-4 grow" />
-            <p className="mt-4 text-2xl tracking-wider leading-9 text-center text-slate-300">
-              New menu designs with vibrant visuals, while the imagery captures the inviting ambiance.
-            </p>
+            <div className="max-md:px-2">
+              <h3 className="mt-0 text-center text-3xl text-slate-300 font-bold lg:hidden">Branding</h3>
+              <p className="max-md:mt-2 mt-4 max-md:text-left text-2xl md:tracking-wider leading-9 text-center text-slate-300">
+                New menu designs with vibrant visuals, while the imagery captures the inviting ambiance.
+              </p>  
+            </div>
           </div>
-          <div className="max-md:mt-8 md:ml-5 w-2/5 max-md:w-full">
+          <div className="max-md:flex max-md:flex-col max-md:mt-8 md:ml-5 w-2/5 max-md:w-full">
             <InfoCard imgSrc={website} altText="Website image" title="Website" link="https://flordojamor.pt" />
-            <p className="mt-4 md:mt-20 text-2xl tracking-wider leading-9 text-center text-slate-300">
-              Display the daily menu that can be updated through the Backoffice with a login wall, and contacts.
-            </p>
+            <div className="max-md:px-2">
+              <h3 className="mt-0 text-center text-3xl text-slate-300 font-bold lg:hidden">Website</h3>
+              <p className="max-md:mt-2 mt-4 md:mt-20 max-md:text-left text-2xl md:tracking-wider leading-9 text-center text-slate-300">
+                Display the daily menu that can be updated through the Backoffice with a login wall, and contacts.
+              </p>  
+            </div>
           </div>
-          <div className="mt-8 w-[30%] max-md:w-full">
+          <div className="max-md:mb-8 max-md:flex max-md:flex-col max-md:mt-8 w-[30%] max-md:w-full">
             <Card imgSrc={profile} altText="Google Business Profile image" title="Google Business Profile" className="mt-44 max-md:mt-10 grow" />
-            <p className="mt-4 text-2xl tracking-wide leading-9 text-center text-slate-300">
-              Enhancing online visibility, attract local customers, and provide valuable insights.
-            </p>
+            <div className="max-md:px-2 max-md:container">
+              <h3 className="mt-0 text-center text-3xl text-slate-300 font-bold lg:hidden">Google Business Profile</h3>
+              <p className="max-md:mt-2 mt-4 max-md:text-left text-2xl md:tracking-wide leading-9 text-center text-slate-300">
+                Enhancing online visibility, attract local customers, and provide valuable insights.
+              </p>  
+            </div>
           </div>
         </div>
       </div>
