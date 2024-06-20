@@ -16,7 +16,7 @@ const TypingAnimation: React.FC<typingAnimations> = ({text, color}) => {
         reveal: {opacity: 1}
     }
     return (
-        <motion.div className="text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-black text-shadow-xl py-8 lg:px-8 px-28 mt-16 max-lg:py-2 max-lg:px-6 max-lg:mt-4"
+        <motion.div className="text-4xl md:text-4xl lg:text-4xl xl:text-5xl h font-black text-shadow-xl py-8 lg:px-8 px-28 mt-16 max-lg:py-2 max-lg:px-6 max-lg:mt-4"
             initial="hidden"
             whileInView="reveal"
             transition={{staggerChildren:0.05}}

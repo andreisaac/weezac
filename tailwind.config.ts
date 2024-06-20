@@ -17,6 +17,7 @@ const config: Config = {
         grayBlue: "#1B1E32",
         emerald: "#31D292",
         cyan: "#41A2F6",
+        cyanOpac: "rgba(65,162,246,.5)",
         purple: "#843DFF",
         grey: "#BDBDBD",
         lightGradient: "linear-gradient(180deg, rgba(132,61,255,1) 0%, rgba(67,161,246,1) 100%)",
@@ -24,7 +25,7 @@ const config: Config = {
       },
       backgroundImage: {
         "bg": "linear-gradient(90deg, rgba(65,162,246,0.3) -10%, rgba(12,6,36,1) 15%, rgba(132, 61, 255, 0.2) 50%, rgba(12,6,36,1) 85%, rgba(49,210,146,0.3) 110%)",
-        "light-gradient": "linear-gradient(353deg, rgba(65,162,246,.5) 0%, rgba(132,61,255,.5) 100%)",
+        "light-gradient": "linear-gradient(360deg, rgba(65,162,246,.5) 0%, rgba(132,61,255,.5) 100%)",
         "dark-gradient": "linear-gradient(180deg, rgba(97,101,215,0.3) 0%, rgba(170,128,249,0.3) 100%)",
       },
       boxShadow: {
