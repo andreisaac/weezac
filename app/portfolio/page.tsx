@@ -1,6 +1,7 @@
 "use client"
 import * as React from "react";
 import Link from "next/link";
+import {motion} from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import menus from "@images/flodojamorMenus.jpg";
 import website from "@images/flordojamor.png";
@@ -69,7 +70,7 @@ const MyComponent: React.FC = () => {
     };
 
   return (
-    <main className="">
+    <motion.main initial={{ opacity: 0, y: -1500 }} animate={{ opacity: 1, y: 0 }} transition={{duration: .5, ease:"easeIn"}}>
 
     <section className="p-4 flex flex-col relative max-md:mt-4 max-md:bg-light-gradient max-md:rounded-xl max-md:mx-2 ">
       <h1 className="max-md:my-4 md:mb-6 md:text-6xl text-4xl font-black tracking-widest text-center md:leading-[64px] text-slate-300 hover:text-emerald h">
@@ -119,7 +120,8 @@ const MyComponent: React.FC = () => {
             <span className="text-slate-300">On going</span>
         </h1>
 
-        <h1 className="max-md:text-6xl my-20 text-8xl font-black tracking-widest text-center leading-[64px] h">Stay tuned!</h1>
+        <motion.h1 animate={{scale:[1,1.05,1]}} transition={{duration: 2, ease:"easeIn", repeat: Infinity}} 
+          className="max-md:text-6xl my-20 text-8xl font-black tracking-widest text-center leading-[64px] h">Stay tuned!</motion.h1>
 
         <a onClick={handleClick} className="inline-block select-none cursor-pointer rounded-full bg-slate-300 p-4 absolute bottom-[-40px] left-[50%] ml-[-34px] z-20 hover:scale-110 shadow ease-in-out transition">
                 <p className="text-slate-900 text-2xl">Top</p>
@@ -135,7 +137,7 @@ const MyComponent: React.FC = () => {
 
 
 
-    </main>
+    </motion.main>
   );
 };
 

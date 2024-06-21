@@ -1,6 +1,7 @@
 "use client"
 import * as React from "react";
 import {useState} from "react";
+import {motion} from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import handshake from "@images/handshake.svg";
@@ -110,7 +111,7 @@ const Contact = () => {
     };
     
     return (
-        <div className="snap-mandatory h-full min-h-screen">
+        <motion.div initial={{ opacity: 0, y: -1500 }} animate={{ opacity: 1, y: 0 }} transition={{duration: .5, ease:"easeIn"}} className="snap-mandatory h-full min-h-screen">
         {!submited ? (
         <section className="bg-dark-gradient rounded-lg drop-shadow-md border-t-8 border-b-8 border-emerald max-lg:mx-4 max-xl:mx-14 mx-28 my-8">
                 <h1 className="max-lg:text-3xl text-5xl text-slate-300 text-center font-bold mt-14">Get a quote to your project.</h1>
@@ -165,7 +166,7 @@ const Contact = () => {
             </section>
         )
         }
-        </div>
+        </motion.div>
     )
 }
 

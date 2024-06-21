@@ -51,10 +51,10 @@ const Step: React.FC<StepProps> = ({ title, number, description }) => (
 );
 
 const PerformanceMetric: React.FC<PerformanceMetricProps> = ({ value, label }) => (
-  <div className="flex flex-col max-sm:mt-8 max-sm:w-6/12 w-3/12 max-lg:ml-0">
+  <motion.div whileHover={{scale:1.2}} className="flex flex-col max-sm:mt-8 max-sm:w-6/12 w-3/12 max-lg:ml-0">
     <div className="radial-progress mx-auto text-green-500 text-xl" style={{"--value":value}} role="progressbar">{value}</div>
     <div className="mt-3 text-center max-md:text-lg text-2xl text-slate-300 font-medium">{label}</div>
-  </div>
+  </motion.div>
 );
 
 
@@ -68,7 +68,7 @@ const HomePage = () => {
       reveal: {opacity: 1, x: 0}
     }
   return (
-    <div className="flex flex-col items-center pb-20 z-10">
+    <motion.div initial={{ opacity: 0, y: -1500 }} animate={{ opacity: 1, y: 0 }} transition={{duration: .5, ease:"easeIn"}} className="flex flex-col items-center pb-20 z-10">
       
       <main className="snap-start snap-always lg:grid lg:grid-cols-5 gap-4 w-full max-lg:mt-10 max-lg:max-w-full max-2xl:mt-24 lg:mt-[-10px] xl:mt-[-220px] relative" >
         <div className="lg:col-span-3 xl:col-span-3 lg:pt-10 xl:mt-14 relative lg:top-[-50px] xl:top-[140px] 2xl:top-[140px]" >
@@ -77,7 +77,7 @@ const HomePage = () => {
             From responsive design to seamless functionality, we ensure your website stands out in today's competitive digital landscape.Partner with us to unlock the full potential of your online platform and drive meaningful results for your business.
           </p>
         </div>
-        <div className="lg:col-auto lg:col-span-2 max-lg:hidden relative lg:top-[40px] xl:top-[200px] xl:p-14">
+        <div className="lg:col-span-2 max-lg:hidden relative lg:top-[40px] xl:top-[200px] xl:p-14">
           <Website></Website>
         </div>
       </main>
@@ -173,7 +173,7 @@ const HomePage = () => {
 
       <Faq/>
 
-    </div>
+    </motion.div>
   );
 }
 
