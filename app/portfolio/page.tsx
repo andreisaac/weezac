@@ -70,7 +70,7 @@ const MyComponent: React.FC = () => {
     };
 
   return (
-    <motion.main initial={{ opacity: 0, y: -1500 }} animate={{ opacity: 1, y: 0 }} transition={{duration: .5, ease:"easeIn"}}>
+    <motion.main initial={{ opacity: 0, y: -1500 }} animate={{ opacity: 1, y: 0 }} transition={{duration: .8, ease:"easeIn"}}>
 
     <section className="p-4 flex flex-col relative max-md:mt-4 max-md:bg-light-gradient max-md:rounded-xl max-md:mx-2 ">
       <h1 className="max-md:my-4 md:mb-6 md:text-6xl text-4xl font-black tracking-widest text-center md:leading-[64px] text-slate-300 hover:text-emerald h">
