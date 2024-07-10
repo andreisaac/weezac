@@ -68,7 +68,7 @@ const HomePage = () => {
       reveal: {opacity: 1, x: 0}
     }
   return (
-    <motion.div initial={{ opacity: 0, y: -1500 }} animate={{ opacity: 1, y: 0 }} transition={{duration: .8, ease:"easeIn"}} className="flex flex-col items-center pb-20 z-10">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1}} transition={{duration: .5, ease:"easeIn"}} className="flex flex-col items-center pb-20 z-10">
       
       <main className="snap-start snap-always lg:grid lg:grid-cols-5 gap-4 w-full max-lg:mt-10 max-lg:max-w-full max-2xl:mt-24 lg:mt-[-10px] xl:mt-[-220px] relative" >
         <div className="lg:col-span-3 xl:col-span-3 lg:pt-10 xl:mt-14 relative lg:top-[-50px] xl:top-[140px] 2xl:top-[140px]" >
