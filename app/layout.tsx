@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@components/navbar"
 import { Analytics } from "@vercel/analytics/react"
+import Weelytical from "weelytical-react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en" data-theme="dark" className="scroll-smooth overflow-y-scroll">
       <body className={inter.className}>
         <Analytics/>
+        <Weelytical/>
         <div className="flex canvas bg-darkerBlue">
             <div className="circles z-0"/>
             <div className="circles z-0"/>
