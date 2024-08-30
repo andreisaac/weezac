@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@components/navbar"
 import { Analytics } from "@vercel/analytics/react"
 import Weelytical from "weelytical-react"
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Weezac",
@@ -19,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark" className="scroll-smooth overflow-y-scroll">
-      <body className={inter.className}>
+      <body>
         <Analytics/>
         <Weelytical/>
-        <div className="flex canvas bg-darkerBlue">
+        <div className="flex canvas bg-n900">
             <div className="circles z-0"/>
             <div className="circles z-0"/>
             <div className="circles z-0"/>

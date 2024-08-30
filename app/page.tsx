@@ -45,8 +45,8 @@ const Section: React.FC<SectionProps> = ({ title, description, imageUrl, imageAl
 
 const Step: React.FC<StepProps> = ({ title, number, description }) => (
   <li className="step step-primary lg:text-center text-slate-300" data-content="">
-    <p className="text-l font-bold text-xl lg:my-4 max-lg:ml-4"><label className="lg:hidden mr-2">{number}. </label> {title}</p>
-    <p>{description}</p>
+    <p className="font-bold xl:text-xl lg:my-4 max-lg:ml-4"><label className="lg:hidden mr-2">{number}. </label> {title}</p>
+    <p className="xl:text-lg">{description}</p>
   </li>
 );
 
@@ -59,21 +59,13 @@ const PerformanceMetric: React.FC<PerformanceMetricProps> = ({ value, label }) =
 
 
 const HomePage = () => {
-    const variantsL = {
-      hidden: {opacity: 0, x: -300,},
-      reveal: {opacity: 1, x: 0}
-    }
-    const variantsR = {
-      hidden: {opacity: 0, x: 300,},
-      reveal: {opacity: 1, x: 0}
-    }
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1}} transition={{duration: .5, ease:"easeIn"}} className="flex flex-col items-center pb-20 z-10">
       
       <main className="snap-start snap-always lg:grid lg:grid-cols-5 gap-4 w-full max-lg:mt-10 max-lg:max-w-full max-2xl:mt-24 lg:mt-[-10px] xl:mt-[-220px] relative" >
         <div className="lg:col-span-3 xl:col-span-3 lg:pt-10 xl:mt-14 relative lg:top-[-50px] xl:top-[140px] 2xl:top-[140px]" >
           <TypingAnimations text="We build your Website!" color="text-emerald"></TypingAnimations>
-          <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
+          <p className="max-lg:text-lg text-2xl max-lg:mt-4 max-lg:px-4 lg:px-8 px-28 tracking-wider text-white">
             From responsive design to seamless functionality, we ensure your website stands out in today's competitive digital landscape.Partner with us to unlock the full potential of your online platform and drive meaningful results for your business.
           </p>
         </div>
@@ -82,7 +74,7 @@ const HomePage = () => {
         </div>
       </main>
 
-      <main className="grid max-lg:grid-cols-2 grid-cols-4 2xl:pt-14 max-xl:gap-1 gap-14 bg-light-gradient max-lg:mx-2 max-lg:p-2 p-8 rounded-lg max-lg:mt-10 xl:mt-24 bg-gradient-light">
+      <main className="grid max-lg:grid-cols-2 grid-cols-4 2xl:pt-14 max-xl:gap-1 gap-14 bg-light-gradient max-lg:mx-2 max-lg:p-2 p-8 rounded-lg max-lg:mt-10 xl:mt-24 bg-gradient-light shadow-2xl">
             <Section title="Institutional Website" description="A well-crafted website is an effective marketing and communication tool that fosters trust and generates leads." imageUrl={int} imageAlt="Institutional Website Image" />
             <Section title="Ecommerce" description="Businesses can operate 24/7, 7 days a week, and reach customers in any time zone with eCommerce solutions." imageUrl={ecomm} imageAlt="Ecommerce Image" />
             <Section title="Web Applications" description="Web applications can reach a global audience. They are interactive and attractive, and therefore can easily catch the attention of users." imageUrl={webapp} imageAlt="Web Applications Image" />
@@ -94,14 +86,10 @@ const HomePage = () => {
         whileInView="reveal"
         viewport={{ once: true }}
       >
-        <motion.div className="lg:col-span-2 max-lg:hidden"
-          variants={variantsL}
-          transition={{duration: 0.5, ease:"easeIn"}}>
+        <motion.div className="lg:col-span-2 max-lg:hidden">
           <Webdesign></Webdesign>
         </motion.div>
-        <motion.div className="lg:col-span-3"
-          variants={variantsR}
-          transition={{duration: 0.5, ease:"easeIn"}}>
+        <motion.div className="lg:col-span-3">
           <TypingAnimations text="Reinventing your business Image!" color="text-cyan"></TypingAnimations>
           <p className="lg:text-lg xl:text-2xl max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
             Your digital storefront speaks volumes about your brand. A fresh website image isn't just about aesthetics it's about making a lasting impression. Stand out from the competition, attract more visitors, and convert them into loyal customers. Let's craft a compelling online identity that reflects the true essence of your business and propels you towards greater success.
@@ -135,14 +123,10 @@ const HomePage = () => {
         whileInView="reveal"
         viewport={{ once: true }}
       >
-        <motion.div className="lg:col-span-2 max-lg:hidden"
-          variants={variantsL}
-          transition={{duration: 0.5, ease:"easeIn"}}>
+        <motion.div className="lg:col-span-2 max-lg:hidden">
           <Rocket></Rocket>
         </motion.div>
-        <motion.div className="lg:col-span-3"
-          variants={variantsR}
-          transition={{duration: 0.5, ease:"easeIn"}}>
+        <motion.div className="lg:col-span-3">
           <TypingAnimations text="SEO Optimization!" color="text-purple"></TypingAnimations>
           <p className="lg:text-xl xl:text-2xl max-lg:px-4 lg:px-8 px-28 tracking-widest text-white">
           Boost your online visibility and drive more traffic to your website with our expert SEO services! 
@@ -151,7 +135,7 @@ const HomePage = () => {
         </motion.div>
       </motion.main>
 
-      <main className="max-lg:mx-2 bg-light-gradient rounded-xl mt-14">
+      <main className="max-lg:mx-2 bg-light-gradient rounded-xl mt-14 z-50 shadow-2xl">
           <h2 className="mt-8 text-center text-green-500 text-shadow-m max-lg:text-4xl text-5xl font-bold">Performance is vital</h2>
           <div className="px-5 mt-7 w-full">
             <div className="flex max-lg:flex-wrap gap-4 max-lg:gap-0 w-full">

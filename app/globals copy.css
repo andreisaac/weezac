@@ -9,54 +9,14 @@
     font-weight: 800;
     src: url(fonts/Urbanist/Urbanist-Black.woff2) format('woff2');
   }
-  @font-face {
-    font-family: 'Urbanist';
-    font-style: normal;
-    font-weight: 700;
-    src: url(fonts/Urbanist/Urbanist-Bold.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'Urbanist';
-    font-style: normal;
-    font-weight: 400;
-    src: url(fonts/Urbanist/Urbanist-Medium.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'Urbanist';
-    font-style: normal;
-    font-weight: 300;
-    src: url(fonts/Urbanist/Urbanist-Regular.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'FiraSans';
-    font-style: normal;
-    font-weight: 300;
-    src: url(fonts/FiraSans/FiraSans-Regular.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'FiraSans';
-    font-style: normal;
-    font-weight: 400;
-    src: url(fonts/FiraSans/FiraSans-Medium.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'FiraSans';
-    font-style: normal;
-    font-weight: 700;
-    src: url(fonts/FiraSans/FiraSans-Bold.woff2) format('woff2');
-  }
 }
 
 h1, h2, h3, h4, h5, h6, .h {
   font-family: "Urbanist";
   font-weight: 800;
 }
-.font-bold{
-  font-family: "Urbanist";
-}
 body {
-  font-family: "FiraSans";
-  font-weight: 300;
+  font-weight: 400;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -153,11 +113,11 @@ body {
 .canvas > .circles,
 .canvas > .circles::before,
 .canvas > .circles::after {
-  -webkit-filter: blur(500px);
-  -moz-filter: blur(500px);
-  -o-filter: blur(500px);
-  -ms-filter: blur(500px);
-  filter: blur(200px) ;
+  -webkit-filter: blur(300px) opacity(0.5);
+  -moz-filter: blur(300px) opacity(0.5);
+  -o-filter: blur(300px) opacity(0.5);
+  -ms-filter: blur(300px) opacity(0.5);
+  filter: blur(200px);
 }
 
 .canvas > .circles,
@@ -179,26 +139,26 @@ body {
 
 
 .canvas > .circles {
-  width: 1000px;
-  height: 1000px;
+  width: 1500px;
+  height: 1500px;
 }
 
 .circles:nth-child(1){
-  background: radial-gradient(circle at center, rgba(49, 210, 146, .75) 0%, rgba(49, 210, 146, 1) 100%);
-  top: 0px;
-  right: -500px;
+  background: radial-gradient(circle at center, rgba(49, 210, 146, 0.5) 0, rgba(49, 210, 146, 0.1) 100%);
+  top: -100px;
+  right: -900px;
 }
 
 .circles:nth-child(2){
-  background: radial-gradient(circle at center, rgba(65, 162, 246, .75) 0%, rgba(65, 162, 246, 1) 100%);
-  top: 1050px;
-  left: -500px;
+  background: radial-gradient(circle at center, rgba(65, 162, 246, 0.5) 0, rgba(65, 162, 246, 0.1) 100%);
+  top: 1100px;
+  left: -900px;
 }
 
 .circles:nth-child(3){
-  background: radial-gradient(circle at center, rgba(132, 61, 255, .75) 0%, rgba(132, 61, 255, 1) 100%);
-  top: 1900px;
-  right: -500px;
+  background: radial-gradient(circle at center, rgba(132, 61, 255, 0.5) 0, rgba(132, 61, 255, 0.1) 100%);
+  top: 2100px;
+  right: -900px;
 }
 
 

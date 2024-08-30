@@ -1,17 +1,81 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import {useState} from "react";
 import bars from "@images/bars.svg";
+import {useRef} from "react";
+import logo from "@images/logo.svg";
 
-import logo from "@images/logo.svg"
 const navbar = () => {
-  const [toggle, setToggle] = useState(false);
 
+  const drawerRef = useRef<HTMLLabelElement>(null);
+  const clickSm = () =>{
+    if (drawerRef.current) {
+      drawerRef.current.click()
+    }
+  }
     return (
-        <header className="flex flex-wrap select-none gap-0 content-center self-stretch text-white z-50 relative">
+      <div className="drawer z-50">
+      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content flex flex-col">
+        {/* Navbar */}
+        <div className="navbar w-full max-lg:bg-n900">
+
+          <div className="flex-1 max-lg:hidden"></div>
+
+          <div className="hidden flex-none lg:block">
+            <ul className="menu menu-horizontal">
+              {/* Navbar menu content here */}
+              <li><Link href="/" className="hover:text-blue-400">Home</Link></li>
+              <li ><Link href="/portfolio" className="hover:text-blue-400">Portfolio</Link></li>
+              <li ><Link href="/contactus" className="hover:text-blue-400">Contact Us</Link></li>
+            </ul>
+          </div>
+
+          <div className="mx-2 max-lg:flex-1 px-2">
+          <Link href="/contactus" className="text-lg px-5 py-1 font-bold rounded-xl shadow-contact active:shadow-contact-active bg-slate-300 hover:bg-green-100 text-slate-900 float-left transition ease-out hover:ease-in">Contact Us</Link>
+          </div>
+          <div className="flex-none lg:hidden">
+            <label ref={drawerRef} htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="inline-block h-6 w-6 stroke-current">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="drawer-side z-40">
+        <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
+        <ul className="menu bg-n800 min-h-full w-80 p-4 text-xl text-n300 gap-4">
+          {/* Sidebar content here */}
+          <li><Link href="/" onClick={clickSm}>Home</Link></li>
+          <li><Link href="/portfolio" onClick={clickSm}>Portfolio</Link></li>
+          <li><Link href="contactus" onClick={clickSm}>Contact Us</Link></li>
+        </ul>
+      </div>
+    </div>
+    )
+}
+
+export default navbar;
+
+
+
+
+/*
+
+<header className="flex flex-wrap select-none gap-0 content-center self-stretch text-white z-50 relative">
         <Link href="/" className="flex-wrap font-bold flex-1 justify-center px-12 text-5xl max-lg:hidden text-neutral-300"><Image src={logo} width={90} height={90} loading="lazy" alt="weezac" className="max-lg:w-[50px] inline-block pb-4 mr-[-8px]"></Image>eezac</Link>
-        <nav className="flex flex-none gap-5 items-center px-12 py-5 text-lg leading-5 max-lg:hidden">
+        <nav className="flex flex-none gap-5 items-center px-12 py-5 text-2xl leading-5 max-lg:hidden">
           <Link href="/" className="self-stretch my-auto hover:text-blue-400">Home</Link>
           <Link href="/portfolio" className="self-stretch my-auto hover:text-blue-400">Portfolio</Link>
           <Link href="/contactus" className="self-stretch my-auto hover:text-blue-400">Contact Us</Link>
@@ -32,7 +96,5 @@ const navbar = () => {
         </nav>
 
       </header>
-    )
-}
 
-export default navbar;
+*/
