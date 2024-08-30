@@ -20,10 +20,12 @@ const navbar = () => {
         {/* Navbar */}
         <div className="navbar w-full max-lg:bg-n900">
 
-          <div className="flex-1 max-lg:hidden"></div>
+          <div className="flex-1 max-lg:hidden">
+            <Link href="/" className="font-bold justify-center px-12 text-5xl max-lg:hidden text-neutral-300"><Image src={logo} width={90} height={90} loading="lazy" alt="weezac" className="max-lg:w-[50px] inline-block pb-4 mr-[-8px]"></Image>eezac</Link>
+          </div>
 
           <div className="hidden flex-none lg:block">
-            <ul className="menu menu-horizontal">
+            <ul className="menu menu-horizontal text-2xl text-n300">
               {/* Navbar menu content here */}
               <li><Link href="/" className="hover:text-blue-400">Home</Link></li>
               <li ><Link href="/portfolio" className="hover:text-blue-400">Portfolio</Link></li>
@@ -32,7 +34,7 @@ const navbar = () => {
           </div>
 
           <div className="mx-2 max-lg:flex-1 px-2">
-          <Link href="/contactus" className="text-lg px-5 py-1 font-bold rounded-xl shadow-contact active:shadow-contact-active bg-slate-300 hover:bg-green-100 text-slate-900 float-left transition ease-out hover:ease-in">Contact Us</Link>
+          <Link href="/contactus" className="text-lg px-5 py-1 xl:py-2.5 font-bold rounded-xl shadow-contact active:shadow-contact-active bg-slate-300 hover:bg-green-100 text-slate-900 float-left transition ease-out hover:ease-in">Contact Us</Link>
           </div>
           <div className="flex-none lg:hidden">
             <label ref={drawerRef} htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
@@ -74,7 +76,6 @@ export default navbar;
 /*
 
 <header className="flex flex-wrap select-none gap-0 content-center self-stretch text-white z-50 relative">
-        <Link href="/" className="flex-wrap font-bold flex-1 justify-center px-12 text-5xl max-lg:hidden text-neutral-300"><Image src={logo} width={90} height={90} loading="lazy" alt="weezac" className="max-lg:w-[50px] inline-block pb-4 mr-[-8px]"></Image>eezac</Link>
         <nav className="flex flex-none gap-5 items-center px-12 py-5 text-2xl leading-5 max-lg:hidden">
           <Link href="/" className="self-stretch my-auto hover:text-blue-400">Home</Link>
           <Link href="/portfolio" className="self-stretch my-auto hover:text-blue-400">Portfolio</Link>
