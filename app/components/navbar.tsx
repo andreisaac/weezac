@@ -29,7 +29,6 @@ const navbar = () => {
               {/* Navbar menu content here */}
               <li><Link href="/" className="hover:text-blue-400">Home</Link></li>
               <li ><Link href="/portfolio" className="hover:text-blue-400">Portfolio</Link></li>
-              <li ><Link href="/contactus" className="hover:text-blue-400">Contact Us</Link></li>
             </ul>
           </div>
 
